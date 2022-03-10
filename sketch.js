@@ -21,7 +21,7 @@ let poem3 = ['Night rain outside the window, lightly whispers this spacious roo
             'I hold a small hand out to myself, the first ever hand-holding of tears and consolation.'];
 
 let poem3_1 = ['and college notebook tucked under arm, attend an old professor lecturing.',
-            'for what expectation do I so, alone, sink into thought?']
+              'for what expectation do I so, alone, sink into thought?']
 
 let thisTitle;
 let thisPoem;
@@ -43,15 +43,17 @@ function draw() {
 
 function mousePressed() {
   fortText();
-  console.log(line);
-}
-
-function fortRect() {
-  //rect(width*0.5,height*0.5, 100);
 }
 
 function intText() {
   fill(204,204,204);
+
+  //if mousePressed() {
+    //fill(0);
+  //} else if {
+    //fill(204,204,204);
+  //}
+
   textAlign(CENTER);
   text('Click anywhere to see the poetry.', width*0.5, height*0.05);
   text('Translated by Suh Hong Won and Seon-Gyeom Choi © 2011 by YONSEI UNIVERSITY PRESS.', width*0.5, height*0.95)
@@ -83,6 +85,6 @@ function fortText() {
 
   text(title[thisTitle], width*0.5, height*0.7);
   text(line, width*0.5, height*0.75);
-  text(poem3[thisPoem],width*0.5, height*0.8)
+  text(line2,width*0.5, height*0.775)
   pop();
 }
