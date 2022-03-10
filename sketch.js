@@ -13,15 +13,20 @@ let poem2 = ['The sky when the season passes is filled to the full with the fal
 
 let poem3 = ['Night rain outside the window, lightly whispers this spacious room is no country of mine.',
             'A poet’s is a sad calling, I know, yet shall I attempt a line of verse.',
-            'Tuition in envelope, sent to me with the warm smell of sweat and love,and college notebook tucked under arm, attend an old professor lecturing.',
-            'I ask myself, having lost, one, two, all of my friends of childhood, for what expectation do I so, alone, sink into thought?',
+            'Tuition in envelope, sent to me with the warm smell of sweat and love,',
+            'I ask myself, having lost, one, two, all of my friends of childhood,',
             'For a poem to be so easily written, when life is so difficult,is a matter of shame.',
             'This spacious room is no country of mine, lightly whispers the night rain outside the window.',
             'The last I, lighting a lamp to push back the dark, and waiting for morning that comes like an age,',
             'I hold a small hand out to myself, the first ever hand-holding of tears and consolation.'];
 
+let poem3_1 = ['and college notebook tucked under arm, attend an old professor lecturing.',
+            'for what expectation do I so, alone, sink into thought?']
+
 let thisTitle;
-let wrds= '';
+let thisPoem;
+let line= '';
+let line2='';
 
 function setup() {
   createCanvas(1000, 700);
@@ -38,19 +43,17 @@ function draw() {
 
 function mousePressed() {
   fortText();
-  console.log(wrds);
+  console.log(line);
 }
-
 
 function fortRect() {
   //rect(width*0.5,height*0.5, 100);
 }
 
-
 function intText() {
   fill(204,204,204);
   textAlign(CENTER);
-  text('Click the background to see your line.', width*0.5, height*0.05);
+  text('Click anywhere to see the poetry.', width*0.5, height*0.05);
   text('Translated by Suh Hong Won and Seon-Gyeom Choi © 2011 by YONSEI UNIVERSITY PRESS.', width*0.5, height*0.95)
 }
 
@@ -61,15 +64,25 @@ function fortText() {
   textSize (16);
   fill(255);
   textAlign(CENTER);
+
+  thisPoem = int(random(poem3.length));
+  if (thisPoem == 0) {
+    line2 = poem3_1[0];
+  } else if (thisPoem == 1) {
+    line2 = poem3_1[1];
+  }
+
   thisTitle = int(random(title.length));
   if (thisTitle == 0) {
-    wrds = poem1[int(random(poem1.length))];
+    line = poem1[int(random(poem1.length))];
   } else if (thisTitle == 1) {
-    wrds = poem2[int(random(poem2.length))];
+    line = poem2[int(random(poem2.length))];
   } else if (thisTitle == 2) {
-    wrds = poem3[int(random(poem3.length))];
+    line = poem3[int(random(poem3.length))];
   }
+
   text(title[thisTitle], width*0.5, height*0.7);
-  text(wrds, width*0.5, height*0.75);
+  text(line, width*0.5, height*0.75);
+  text(poem3[thisPoem],width*0.5, height*0.8)
   pop();
 }
