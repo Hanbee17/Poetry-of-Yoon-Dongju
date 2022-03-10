@@ -1,11 +1,14 @@
 
 let title = ['Prelude', 'One Night, Counting the Stars', 'A Poem Easily Written'];
+let ktitle = ['서시']
 
 let poem1 = ['Till my dying day, let no spot of shame be upon me, as I look to heaven;',
              'I was troubled even by a slight wind that grew on a leaf.',
              'I will love all that is dying with a heart that sings of stars',
              'And walk the pate that is given me.',
              'Even tonight a star is rustled by the wind.'];
+
+let kpoem1 = ['하늘을 우러러 한 점 부끄러움이 없기를..', '잎새에 이는 바람에도 나는 괴로워했다.']
 
 let poem2 = ['The sky when the season passes is filled to the full with the fall.',
             'I could almost count, free of care, all the stars in the folds of this fall.',
@@ -24,9 +27,11 @@ let poem3_1 = ['and college notebook tucked under arm, attend an old professor l
               'for what expectation do I so, alone, sink into thought?']
 
 let thisTitle;
-let thisPoem;
+let thiskTitle;
+//let thisPoem;
 let line= '';
 let line2='';
+let lineK = '';
 
 function setup() {
   createCanvas(1000, 700);
@@ -67,12 +72,12 @@ function fortText() {
   fill(255);
   textAlign(CENTER);
 
-  thisPoem = int(random(poem3.length));
-  if (thisPoem == 0) {
-    line2 = poem3_1[0];
-  } else if (thisPoem == 1) {
-    line2 = poem3_1[1];
+  thiskTitle = int(random(ktitle.length));
+  if (thiskTitle == 0 && thisTitle == 0) {
+    line3 = kpoem1[int(random(kpoem1.length))];
+  } else {
   }
+
 
   thisTitle = int(random(title.length));
   if (thisTitle == 0) {
@@ -81,10 +86,18 @@ function fortText() {
     line = poem2[int(random(poem2.length))];
   } else if (thisTitle == 2) {
     line = poem3[int(random(poem3.length))];
+    thisPoem = int(random(poem3.length));
+    if (thisPoem == 0) {
+      line2 = poem3_1[0];
+    } else if (thisPoem == 1) {
+      line2 = poem3_1[1];
+    }
   }
 
   text(title[thisTitle], width*0.5, height*0.7);
+  text(ktitle, width*0.5, height*0.725);
   text(line, width*0.5, height*0.75);
   text(line2,width*0.5, height*0.775)
+  text(line3,width*0.5, height*0.8)
   pop();
 }
