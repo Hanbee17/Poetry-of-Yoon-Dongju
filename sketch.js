@@ -155,6 +155,7 @@ function preload() {
 function setup() {
   createCanvas(1300, 1000);
   background(0);
+  createButton("Start").mousePressed(intText);
   frameRate(60);
   textFont(myFont);
   imageMode(CENTER);
