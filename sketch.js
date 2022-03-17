@@ -128,11 +128,13 @@ let thisTitle;
 let thiskTitle;
 let thisKpoem;
 let thisPoem;
+let thisBgm;
 let RanPoem1;
 let RanPoem2;
 let RanPoem3;
 let RanPoem4;
 let RanPoem5;
+let RanBgm;
 
 let myFont;
 let myImg0;
@@ -141,7 +143,7 @@ let myImg2;
 let myImg3;
 let myImg4;
 let myImg5;
-let myBgm;
+let myBgm = [];
 
 function preload() {
   myFont = loadFont('font1.ttf');
@@ -151,11 +153,15 @@ function preload() {
   myImg3 = loadImage('img3.jpg');
   myImg4 = loadImage('img4.jpg');
   myImg5 = loadImage('img5.jpg');
-  myBgm = loadSound('bgm.mp3');
+
+  for (i = 0; i <= 2; i++) {
+    myBgm[i] = loadSound('bgm'+[i]+'.mp3');
+  }
+  //myBgm = loadSound('bgm.mp3');
 }
 
 function setup() {
-  createCanvas(1300, 1000);
+  createCanvas(1800, 1025);
   background(0);
   //createButton("Start").mousePressed(intText);
   frameRate(60);
@@ -165,22 +171,24 @@ function setup() {
   console.log(poem1[int(random(poem1.length))]);
   console.log(poem2.length);
   console.log(poem3.length);
+  console.log(keyPressed);
+  console.log(myBgm.length);
 }
 
 function draw() {
   push();
   textSize(22);
-  fill(204, 204, 204);
+  fill(173,181,189);
   textAlign(CENTER);
-  text('Click anywhere to see the poetry.', width * 0.5, height * 0.035);
-  text('Press Spacebar to play music and press Enter to pause the music.', width * 0.5, height * 0.065);
+  text('Click anywhere to see the poetry.', width * 0.5, height * 0.045);
+  text('Press Spacebar to play music and press Enter to pause the music.', width * 0.5, height * 0.075);
   pop();
 }
 
 function intText() {
-  fill(204, 204, 204);
+  fill(173,181,189);
   imageMode(CENTER);
-  image(myImg0, width * 0.3, height * 0.5, width * 0.4, height * 0.7);
+  image(myImg0, width * 0.3, height * 0.5, width * 0.35, height * 0.7);
   textSize(18)
   textAlign(CENTER);
   text('Translated by Suh Hong Won and Seon-Gyeom Choi, 2011 by YONSEI UNIVERSITY PRESS.', width * 0.5, height * 0.90);
@@ -192,73 +200,91 @@ function intText() {
   rectMode(CENTER);
   textAlign(LEFT);
   textSize(25);
-  text(textEx, width * 0.75, height * 0.6, width * 0.4, height * 0.9)
-  text(textEx2, width * 0.75, height * 0.95, width * 0.4, height * 0.9)
+  text(textEx, width * 0.7, height * 0.6, width * 0.4, height * 0.9)
+  text(textEx2, width * 0.7, height * 0.95, width * 0.4, height * 0.9)
   pop();
 }
 
 function keyPressed() {
   if (keyCode == 32) {
-    myBgm.loop();
-    myBgm.playMode('untilDone');
-    myBgm.play();
+   Music();
   } else if (keyCode === 13) {
-    myBgm.pause();
-    console.log(keyPressed);
+    PauseMusic();
   }
+}
+
+function Music() {
+  RanBgm = int(random(myBgm.length));
+  thisBgm = myBgm[RanBgm];
+  thisBgm.play();
+  // thisBgm.loop();
+  // thisBgm.playMode('untilDone');
+}
+
+function MusicLoop() {
+  thisBgm.loop();
+}
+
+function MusicMode() {
+  thisBgm.playMode('untilDone');
+}
+
+function PauseMusic() {
+  thisBgm.pause();
 }
 
 function mousePressed() {
   push();
   rectMode(CENTER);
   fill(254, 250, 224);
-  rect(width*0.55, height*0.5, 1600,1100)
+  rect(width*0.5, height*0.5, 1900,1300)
   pop();
   fortText();
 }
 
 function fortText() {
-
   push();
   textSize(25);
   fill(33, 37, 41);
   textAlign(CENTER);
+
   thisTitle = int(random(title.length));
   if (thisTitle == 0) {
-    image(myImg1, width * 0.5, height * 0.4, width * 0.6, height * 0.6);
+    image(myImg1, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
     thiskTitle = ktitle[0]
     RanPoem1 = int(random(poem1.length));
     thisPoem = poem1[RanPoem1];
     thisKpoem = kpoem1[RanPoem1];
 
   } else if (thisTitle == 1) {
-    image(myImg2, width * 0.5, height * 0.4, width * 0.6, height * 0.6);
+    image(myImg2, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
     thiskTitle = ktitle[1]
     RanPoem2 = int(random(poem2.length));
     thisPoem = poem2[RanPoem2];
     thisKpoem = kpoem2[RanPoem2];
 
   } else if (thisTitle == 2) {
-    image(myImg3, width * 0.5, height * 0.4, width * 0.6, height * 0.6);
+    image(myImg3, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
     thiskTitle = ktitle[2]
     RanPoem3 = int(random(poem3.length));
     thisPoem = poem3[RanPoem3];
     thisKpoem = kpoem3[RanPoem3];
 
   } else if (thisTitle == 3) {
-    image(myImg4, width * 0.5, height * 0.4, width * 0.6, height * 0.6);
+    image(myImg4, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
     thiskTitle = ktitle[3]
     RanPoem4 = int(random(poem4.length));
     thisPoem = poem4[RanPoem4];
     thisKpoem = kpoem4[RanPoem4];
 
   } else if (thisTitle == 4) {
-    image(myImg5, width * 0.5, height * 0.4, width * 0.6, height * 0.6);
+    image(myImg5, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
     thiskTitle = ktitle[4]
     RanPoem5 = int(random(poem5.length));
     thisPoem = poem5[RanPoem5];
     thisKpoem = kpoem5[RanPoem5];
   }
+
   text(title[thisTitle], width * 0.5, height * 0.775);
   text(thiskTitle, width * 0.5, height * 0.815);
 
