@@ -142,7 +142,7 @@ let myImg5;
 let myBgm;
 
 function preload() {
-  myFont = loadFont('/font1.ttf');
+  myFont = loadFont('font1.ttf');
   myImg0 = loadImage('img0.jpg');
   myImg1 = loadImage('img1.jpg');
   myImg2 = loadImage('img2.jpg');
