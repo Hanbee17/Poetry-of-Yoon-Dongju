@@ -23,7 +23,7 @@ let poem2 = ['The sky when the season passes is filled to the full with the fall
              'I could almost count, free of care, all the stars in the folds of this fall.',
              'If I cannot complete the counting of stars that are etched one and two in my heart,',
              'It is that morn arrives too hastily, that tomorrow night is yet to come, and that my youth is not yet done.',
-             'A star and rememberance, A star and love, A star and loneliness',
+             'A star and rememberance, A star and love, A star and lonethisPoemss',
              'A star and longing, A tar and poem, A star and mother, mother.',
              'Mother, for each star I sing the syllables of beautiful words.',
              'Names of children who sat next to me in school, names of foreign girls like ‘Pae,’ ‘Kyeong,’ ‘Ok’; names of girls already become mothers;',
@@ -54,7 +54,7 @@ let kpoem2 = ['계절이 지나가는 하늘에는 가을로 가득 차 있습�
              '내 이름자 묻힌 언덕 위에도 자랑처럼 풀이 무성할 게외다.']
 
 let poem3 = ['Night rain outside the window, lightly whispers this spacious room is no country of mine.',
-            'A poet’s is a sad calling, I know, yet shall I attempt a line of verse.',
+            'A poet’s is a sad calling, I know, yet shall I attempt a thisPoem of verse.',
             'Tuition in envelope, sent to me with the warm smell of sweat and love,',
             'and college notebook tucked under arm, I attend an old professor lecturing.',
             'I ask myself, having lost, one, two, all of my friends of childhood,',
@@ -75,12 +75,13 @@ let kpoem3 = ['창밖에 밤비가 속살거려 육척방은 남의 나라.',
               '등불처럼 어둠을 조금 내몰고 시대처럼 올 아침을 기다리는 최후의 나,',
               '나는 나에게 작은 손을 내밀어 눈물과 위안으로 잡는 최초의 악수.']
 
+let textEx = 'Yoon Dongju (1917-1945), the poet most loved by the Korean people, uprightly sought the direction of the times and life through literature, even in difficult times of the colonial rule. He consistently wrote poems in Korean that pondered and reflected on the reality the community faced, and this led to his imprisonment on charges of independence movement and death at the age of 27. However, the poems that put him in danger have since resonated and breathed in the hearts of many.'
+let textEx2 = 'The 124 poems and prose works that he left behind have become the poems most loved by Koreans, remembered by East Asians, and sympathized with by people around the world. Through poems such as "Prelude", "The Cross", and "Counting the Stars", he showed that a clear  and pure soul lives on earth. He pledged to ‘walk the path given to him’ with a heart of ‘love for all dying things.’ The poems of Yoon Dongju, who constantly reflected on himself and sought to walk by his faith, have since become the driving force in each era and for the youth.'
 
 let thisTitle;
 let thiskTitle;
-let thisPoem;
 let thisKpoem;
-let line;
+let thisPoem;
 let RanPoem1;
 let RanPoem2;
 let RanPoem3;
@@ -98,12 +99,11 @@ function preload() {
   myImg1 = loadImage('img1.jpg');
   myImg2 = loadImage('img2.jpg');
   myImg3 = loadImage('img3.jpg');
-  soundFormats('mp3');
   myBgm = loadSound('bgm.mp3');
 }
 
 function setup() {
-  createCanvas(1200, 900);
+  createCanvas(1300, 1000);
   background(0);
   frameRate(60);
   textFont(myFont);
@@ -140,11 +140,22 @@ function mousePressed() {
 
 function intText() {
   fill(204,204,204);
-  image(myImg0,width*0.5,height*0.5, width*0.4, height*0.7);
+  imageMode(CENTER);
+  image(myImg0,width*0.3,height*0.5, width*0.4, height*0.7);
   textSize(20)
   textAlign(CENTER);
-  text('Translated by Suh Hong Won and Seon-Gyeom Choi, 2011 by YONSEI UNIVERSITY PRESS.', width*0.5, height*0.90)
-  text('Images from Yoon Dongju Memorial Hall, Yonsei University', width*0.5, height*0.935)
+  text('Translated by Suh Hong Won and Seon-Gyeom Choi, 2011 by YONSEI UNIVERSITY PRESS.', width*0.5, height*0.90);
+  text('Images from Yoon Dongju Memorial Hall, Yonsei University', width*0.5, height*0.935);
+  text('Music from Keys of Moon music, https://soundcloud.com/keysofmoon', width*0.5, height*0.97);
+
+  push();
+  fill(255);
+  rectMode(CENTER);
+  textAlign(LEFT);
+  textSize(25);
+  text(textEx, width*0.75,height*0.6, width*0.4, height*0.9)
+  text(textEx2, width*0.75,height*0.95, width*0.4, height*0.9)
+  pop();
 }
 
 function fortText() {
@@ -161,27 +172,27 @@ function fortText() {
     image(myImg1, width*0.5,height*0.4, width*0.6, height*0.6);
     thiskTitle = ktitle[0]
     RanPoem1 = int(random(poem1.length));
-    line = poem1[RanPoem1];
+    thisPoem = poem1[RanPoem1];
     thisKpoem = kpoem1[RanPoem1];
 
   } else if (thisTitle == 1) {
     image(myImg2, width*0.5,height*0.4, width*0.6, height*0.6);
     thiskTitle = ktitle[1]
     RanPoem2 = int(random(poem2.length));
-    line = poem2[RanPoem2];
+    thisPoem = poem2[RanPoem2];
     thisKpoem = kpoem2[RanPoem2];
 
   } else if (thisTitle == 2) {
     image(myImg3, width*0.5,height*0.4, width*0.6, height*0.6);
     thiskTitle = ktitle[2]
     RanPoem3 = int(random(poem3.length));
-    line = poem3[RanPoem3];
+    thisPoem = poem3[RanPoem3];
     thisKpoem = kpoem3[RanPoem3];
   }
 
   text(title[thisTitle], width*0.5, height*0.75);
   text(thiskTitle, width*0.5, height*0.8);
-  text(line, width*0.5, height*0.9);
+  text(thisPoem, width*0.5, height*0.9);
   text(thisKpoem, width*0.5, height*0.95)
   pop();
 }
