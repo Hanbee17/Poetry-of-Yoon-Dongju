@@ -176,21 +176,6 @@ function draw() {
   pop();
 }
 
-function keyPressed() {
-  if (keyCode == 32) {
-    myBgm.loop();
-    myBgm.playMode('untilDone');
-    myBgm.play();
-  } else if (keyCode === 13) {
-    myBgm.pause();
-    console.log(keyPressed);
-  }
-}
-
-function mousePressed() {
-  fortText();
-}
-
 function intText() {
   fill(204, 204, 204);
   imageMode(CENTER);
@@ -211,14 +196,32 @@ function intText() {
   pop();
 }
 
+function keyPressed() {
+  if (keyCode == 32) {
+    myBgm.loop();
+    myBgm.playMode('untilDone');
+    myBgm.play();
+  } else if (keyCode === 13) {
+    myBgm.pause();
+    console.log(keyPressed);
+  }
+}
+
+function mousePressed() {
+  push();
+  rectMode(CENTER);
+  fill(254, 250, 224);
+  rect(width*0.55, height*0.5, 1600,1100)
+  pop();
+  fortText();
+}
+
 function fortText() {
-  background(254, 250, 224);
-  //intText();
+
   push();
   textSize(25);
   fill(33, 37, 41);
   textAlign(CENTER);
-
   thisTitle = int(random(title.length));
   if (thisTitle == 0) {
     image(myImg1, width * 0.5, height * 0.4, width * 0.6, height * 0.6);
@@ -255,7 +258,6 @@ function fortText() {
     thisPoem = poem5[RanPoem5];
     thisKpoem = kpoem5[RanPoem5];
   }
-
   text(title[thisTitle], width * 0.5, height * 0.775);
   text(thiskTitle, width * 0.5, height * 0.815);
 
@@ -263,7 +265,7 @@ function fortText() {
   textSize(28);
   text(thisPoem, width * 0.5, height * 0.875);
   text(thisKpoem, width * 0.5, height * 0.915)
-
   pop();
+
   pop();
 }
