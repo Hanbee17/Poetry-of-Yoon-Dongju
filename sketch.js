@@ -122,6 +122,8 @@ let kpoem5 = ['쫓아오던 햇빛인데, 지금 교회당 꼭대기 십자가�
 let textEx = 'Yoon Dongju (1917-1945), the poet most loved by the Korean people, uprightly sought the direction of the times and life through literature, even in difficult times of the colonial rule. He consistently wrote poems in Korean that pondered and reflected on the reality the community faced, and this led to his imprisonment on charges of independence movement and death at the age of 27. However, the poems that put him in danger have since resonated and breathed in the hearts of many.'
 let textEx2 = 'The 124 poems and prose works that he left behind have become the poems most loved by Koreans, remembered by East Asians, and sympathized with by people around the world. Through poems such as "Prelude", "The Cross", and "Counting the Stars", he showed that a clear  and pure soul lives on earth. He pledged to ‘walk the path given to him’ with a heart of ‘love for all dying things.’ The poems of Yoon Dongju, who constantly reflected on himself and sought to walk by his faith, have since become the driving force in each era and for the youth.'
 
+let fortText;
+let intText;
 let thisTitle;
 let thiskTitle;
 let thisKpoem;
@@ -210,7 +212,7 @@ function intText() {
 }
 
 function fortText() {
-  background(254, 250, 224);
+  fill(254, 250, 224);
   //intText();
 
   push();
