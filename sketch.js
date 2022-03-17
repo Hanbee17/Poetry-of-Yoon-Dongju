@@ -1,10 +1,10 @@
 
-let title = ['Prelude', 
-             'One Night, Counting the Stars', 
+let title = ['Prelude',
+             'One Night, Counting the Stars',
              'A Poem Easily Written'];
 
-let ktitle = ['서시', 
-              '별 헤는 밤', 
+let ktitle = ['서시',
+              '별 헤는 밤',
               '쉽게 쓰여진 시'];
 
 let poem1 = ['Till my dying day, let no spot of shame be upon me, as I look to heaven;',
@@ -13,10 +13,10 @@ let poem1 = ['Till my dying day, let no spot of shame be upon me, as I look to h
              'And walk the pate that is given me.',
              'Even tonight a star is rustled by the wind.'];
 
-let kpoem1 = ['죽는날 까지 하늘을 우러러 한점 부끄럼이 없기를', 
-              '잎새에 이는 바람에도 나는 괴로워 했다.', 
+let kpoem1 = ['죽는날 까지 하늘을 우러러 한점 부끄럼이 없기를',
+              '잎새에 이는 바람에도 나는 괴로워 했다.',
               '별을 노래하는 마음으로 모든 죽어가는 것을 사랑해야지',
-              '그리고 나에게 주어진 길을 걸어가야겠다.', 
+              '그리고 나에게 주어진 길을 걸어가야겠다.',
               '오늘밤에도 별이 바람에 스치운다.']
 
 let poem2 = ['The sky when the season passes is filled to the full with the fall.',
@@ -56,11 +56,11 @@ let kpoem2 = ['계절이 지나가는 하늘에는 가을로 가득 차 있습�
 let poem3 = ['Night rain outside the window, lightly whispers this spacious room is no country of mine.',
             'A poet’s is a sad calling, I know, yet shall I attempt a line of verse.',
             'Tuition in envelope, sent to me with the warm smell of sweat and love,',
-             'and college notebook tucked under arm, I attend an old professor lecturing.',
+            'and college notebook tucked under arm, I attend an old professor lecturing.',
             'I ask myself, having lost, one, two, all of my friends of childhood,',
-             'for what expectation do I so, alone, sink into thought?',
+            'for what expectation do I so, alone, sink into thought?',
             'For a poem to be so easily written, when life is so difficult,is a matter of shame.',
-            'This spacious room is no country of mine, lightly whispers the night rain outside the window.',
+            'This spacious room is no country of mine, lightly whispers the night rain outside the window.',
             'The last I, lighting a lamp to push back the dark, and waiting for morning that comes like an age,',
             'I hold a small hand out to myself, the first ever hand-holding of tears and consolation.'];
 
@@ -90,6 +90,7 @@ let myImg0;
 let myImg1;
 let myImg2;
 let myImg3;
+let myBg;
 
 function preload() {
   myFont = loadFont('/font1.ttf');
@@ -100,7 +101,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1000, 900);
+  createCanvas(1200, 900);
   background(0);
   frameRate(60);
   textFont(myFont);
@@ -112,6 +113,7 @@ function setup() {
 }
 
 function draw() {
+
 }
 
 function mousePressed() {
@@ -120,11 +122,12 @@ function mousePressed() {
 
 function intText() {
   fill(204,204,204);
-  image(myImg0, width*0.5,height*0.5, width*0.5, height*0.7);
+  image(myImg0,width*0.5,height*0.5, width*0.4, height*0.7);
   textSize(20)
   textAlign(CENTER);
   text('Click anywhere to see the poetry.', width*0.5, height*0.05);
   text('Translated by Suh Hong Won and Seon-Gyeom Choi, 2011 by YONSEI UNIVERSITY PRESS.', width*0.5, height*0.95)
+  text('Images from Yoon Dongju Memorial Hall, Yonsei University', width*0.5, height*0.975)
 }
 
 function fortText() {
@@ -143,24 +146,22 @@ function fortText() {
     RanPoem1 = int(random(poem1.length));
     line = poem1[RanPoem1];
     thisKpoem = kpoem1[RanPoem1];
-    
+
   } else if (thisTitle == 1) {
     image(myImg2, width*0.5,height*0.4, width*0.6, height*0.6);
-    //line = poem2[int(random(poem2.length))];
     thiskTitle = ktitle[1]
     RanPoem2 = int(random(poem2.length));
     line = poem2[RanPoem2];
     thisKpoem = kpoem2[RanPoem2];
-    
+
   } else if (thisTitle == 2) {
     image(myImg3, width*0.5,height*0.4, width*0.6, height*0.6);
-    //line = poem3[int(random(poem3.length))];
     thiskTitle = ktitle[2]
     RanPoem3 = int(random(poem3.length));
     line = poem3[RanPoem3];
     thisKpoem = kpoem3[RanPoem3];
   }
-  
+
 
   text(title[thisTitle], width*0.5, height*0.75);
   text(thiskTitle, width*0.5, height*0.8);
