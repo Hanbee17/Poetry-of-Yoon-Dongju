@@ -169,10 +169,11 @@ function setup() {
 
 function draw() {
   push();
-  textSize(23);
+  textSize(22);
   fill(204, 204, 204);
   textAlign(CENTER);
-  text('Click anywhere to see the poetry.', width * 0.5, height * 0.0675);
+  text('Click anywhere to see the poetry.', width * 0.5, height * 0.035);
+  text('Press Spacebar to play music and press Enter to pause the music.', width * 0.5, height * 0.065);
   pop();
 }
 
