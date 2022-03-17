@@ -90,7 +90,7 @@ let myImg0;
 let myImg1;
 let myImg2;
 let myImg3;
-let myBg;
+let myBgm;
 
 function preload() {
   myFont = loadFont('/font1.ttf');
@@ -98,6 +98,8 @@ function preload() {
   myImg1 = loadImage('img1.jpg');
   myImg2 = loadImage('img2.jpg');
   myImg3 = loadImage('img3.jpg');
+  soundFormats('mp3');
+  myBgm = loadSound('bgm.mp3');
 }
 
 function setup() {
@@ -113,7 +115,23 @@ function setup() {
 }
 
 function draw() {
+  push();
+  textSize (20);
+  fill(204,204,204);
+  textAlign(CENTER);
+  text('Click anywhere to see the poetry.', width*0.5, height*0.065);
+  pop();
+}
 
+function keyPressed() {
+  if (keyCode == 32) {
+    myBgm.loop();
+    myBgm.playMode('untilDone');
+    myBgm.play();
+  } else if (keyCode === 13) {
+    myBgm.pause();
+    console.log(keyPressed);
+  }
 }
 
 function mousePressed() {
@@ -125,19 +143,18 @@ function intText() {
   image(myImg0,width*0.5,height*0.5, width*0.4, height*0.7);
   textSize(20)
   textAlign(CENTER);
-  text('Click anywhere to see the poetry.', width*0.5, height*0.05);
-  text('Translated by Suh Hong Won and Seon-Gyeom Choi, 2011 by YONSEI UNIVERSITY PRESS.', width*0.5, height*0.95)
-  text('Images from Yoon Dongju Memorial Hall, Yonsei University', width*0.5, height*0.975)
+  text('Translated by Suh Hong Won and Seon-Gyeom Choi, 2011 by YONSEI UNIVERSITY PRESS.', width*0.5, height*0.90)
+  text('Images from Yoon Dongju Memorial Hall, Yonsei University', width*0.5, height*0.935)
 }
 
 function fortText() {
-  background(0);
+  background(254,250,224);
   //intText();
+
   push();
   textSize (25);
-  fill(255);
+  fill(33,37,41);
   textAlign(CENTER);
-
 
   thisTitle = int(random(title.length));
   if (thisTitle == 0) {
@@ -161,7 +178,6 @@ function fortText() {
     line = poem3[RanPoem3];
     thisKpoem = kpoem3[RanPoem3];
   }
-
 
   text(title[thisTitle], width*0.5, height*0.75);
   text(thiskTitle, width*0.5, height*0.8);
