@@ -145,6 +145,9 @@ let myImg4;
 let myImg5;
 let myBgm = [];
 
+let canvas;
+let button;
+
 function preload() {
   myFont = loadFont('font1.ttf');
   myImg0 = loadImage('img0.jpg');
@@ -161,9 +164,10 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1800, 1025);
+  let canvas = createCanvas(windowWidth*1,windowHeight*1);
+  canvas.parent('myCanvas');
+
   background(0);
-  //createButton("Start").mousePressed(intText);
   frameRate(60);
   textFont(myFont);
   imageMode(CENTER);
@@ -234,11 +238,18 @@ function PauseMusic() {
 }
 
 function mousePressed() {
+  //ButtonIsPressed();
+}
+
+function ButtonIsPressed() {
   push();
   rectMode(CENTER);
   fill(254, 250, 224);
   rect(width*0.5, height*0.5, 1900,1300)
   pop();
+  let button = createButton('Click Me!');
+  button.parent('button-holder');
+  button.position(width*0.8, height*0.4);
   fortText();
 }
 
