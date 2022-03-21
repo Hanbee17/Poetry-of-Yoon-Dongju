@@ -5,3 +5,25 @@ html, body {
 canvas {
   display: block;
 }
+
+button {
+  font-family: 'font1';
+  font-size: large;
+  margin: auto;
+  background-color: #D1D5DB;
+  border: none;
+  color: black;
+  padding: 30px 64px;
+  text-align: center;
+  text-decoration: none;
+  //display: inline-block;
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}

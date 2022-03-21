@@ -184,7 +184,7 @@ function draw() {
   textSize(22);
   fill(173,181,189);
   textAlign(CENTER);
-  text('Click anywhere to see the poetry.', width * 0.5, height * 0.045);
+  text('Click the button to see the poetry.', width * 0.5, height * 0.045);
   text('Press Spacebar to play music and press Enter to pause the music.', width * 0.5, height * 0.075);
   pop();
 }
@@ -193,11 +193,6 @@ function intText() {
   fill(173,181,189);
   imageMode(CENTER);
   image(myImg0, width * 0.3, height * 0.5, width * 0.35, height * 0.7);
-  textSize(18)
-  textAlign(CENTER);
-  text('Translated by Suh Hong Won and Seon-Gyeom Choi, 2011 by YONSEI UNIVERSITY PRESS.', width * 0.5, height * 0.90);
-  text('Images from Yoon Dongju Memorial Hall, Yonsei University', width * 0.5, height * 0.925);
-  text('Music from Keys of Moon music, https://soundcloud.com/keysofmoon', width * 0.5, height * 0.95);
 
   push();
   fill(255);
@@ -207,6 +202,14 @@ function intText() {
   text(textEx, width * 0.7, height * 0.6, width * 0.4, height * 0.9)
   text(textEx2, width * 0.7, height * 0.95, width * 0.4, height * 0.9)
   pop();
+}
+
+function mousePressed() {
+
+  let button = createButton('Click Me!');
+  button.parent('button-holder');
+  button.position(width*0.85, height*0.4);
+  button.mousePressed(fortText);
 }
 
 function keyPressed() {
@@ -225,35 +228,26 @@ function Music() {
   // thisBgm.playMode('untilDone');
 }
 
-function MusicLoop() {
-  thisBgm.loop();
-}
-
-function MusicMode() {
-  thisBgm.playMode('untilDone');
-}
+// function MusicLoop() {
+//   thisBgm.loop();
+// }
+//
+// function MusicMode() {
+//   thisBgm.playMode('untilDone');
+// }
 
 function PauseMusic() {
   thisBgm.pause();
 }
 
-function mousePressed() {
-  //ButtonIsPressed();
-}
 
-function ButtonIsPressed() {
-  push();
+
+function fortText() {
+
   rectMode(CENTER);
   fill(254, 250, 224);
   rect(width*0.5, height*0.5, 1900,1300)
-  pop();
-  let button = createButton('Click Me!');
-  button.parent('button-holder');
-  button.position(width*0.8, height*0.4);
-  fortText();
-}
-
-function fortText() {
+  
   push();
   textSize(25);
   fill(33, 37, 41);
