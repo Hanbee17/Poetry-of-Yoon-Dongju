@@ -147,6 +147,8 @@ let myBgm = [];
 
 let canvas;
 let button;
+let buttonVar = 0;
+let coverVar = 0;
 
 function preload() {
   myFont = loadFont('font1.ttf');
@@ -166,6 +168,10 @@ function preload() {
 function setup() {
   let canvas = createCanvas(windowWidth*1,windowHeight*1);
   canvas.parent('myCanvas');
+
+  RanBgm = int(random(myBgm.length));
+  thisBgm = myBgm[RanBgm];
+
 
   background(0);
   frameRate(60);
@@ -205,12 +211,14 @@ function intText() {
 }
 
 function mousePressed() {
-
-  let button = createButton('Click Me!');
-  button.parent('button-holder');
-  button.position(width*0.85, height*0.4);
-  button.mousePressed(fortText);
+  if (coverVar == 0) {
+    fortText();
+    coverVar = 1;
+    console.log("test");
+  }
 }
+
+
 
 function keyPressed() {
   if (keyCode == 32) {
@@ -221,33 +229,24 @@ function keyPressed() {
 }
 
 function Music() {
+  if (thisBgm.isPlaying() == false) {
   RanBgm = int(random(myBgm.length));
   thisBgm = myBgm[RanBgm];
   thisBgm.play();
   // thisBgm.loop();
-  // thisBgm.playMode('untilDone');
 }
-
-// function MusicLoop() {
-//   thisBgm.loop();
-// }
-//
-// function MusicMode() {
-//   thisBgm.playMode('untilDone');
-// }
+}
 
 function PauseMusic() {
   thisBgm.pause();
 }
 
-
-
-function fortText() {
+function fortText2() {
 
   rectMode(CENTER);
   fill(254, 250, 224);
   rect(width*0.5, height*0.5, 1900,1300)
-  
+
   push();
   textSize(25);
   fill(33, 37, 41);
@@ -292,12 +291,80 @@ function fortText() {
 
   text(title[thisTitle], width * 0.5, height * 0.775);
   text(thiskTitle, width * 0.5, height * 0.815);
-
   push();
   textSize(28);
   text(thisPoem, width * 0.5, height * 0.875);
   text(thisKpoem, width * 0.5, height * 0.915)
   pop();
-
   pop();
+}
+
+function fortText() {
+
+  rectMode(CENTER);
+  fill(254, 250, 224);
+  rect(width*0.5, height*0.5, 1900,1300)
+
+  push();
+  textSize(25);
+  fill(33, 37, 41);
+  textAlign(CENTER);
+
+  thisTitle = int(random(title.length));
+  if (thisTitle == 0) {
+    image(myImg1, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    thiskTitle = ktitle[0]
+    RanPoem1 = int(random(poem1.length));
+    thisPoem = poem1[RanPoem1];
+    thisKpoem = kpoem1[RanPoem1];
+
+  } else if (thisTitle == 1) {
+    image(myImg2, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    thiskTitle = ktitle[1]
+    RanPoem2 = int(random(poem2.length));
+    thisPoem = poem2[RanPoem2];
+    thisKpoem = kpoem2[RanPoem2];
+
+  } else if (thisTitle == 2) {
+    image(myImg3, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    thiskTitle = ktitle[2]
+    RanPoem3 = int(random(poem3.length));
+    thisPoem = poem3[RanPoem3];
+    thisKpoem = kpoem3[RanPoem3];
+
+  } else if (thisTitle == 3) {
+    image(myImg4, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    thiskTitle = ktitle[3]
+    RanPoem4 = int(random(poem4.length));
+    thisPoem = poem4[RanPoem4];
+    thisKpoem = kpoem4[RanPoem4];
+
+  } else if (thisTitle == 4) {
+    image(myImg5, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    thiskTitle = ktitle[4]
+    RanPoem5 = int(random(poem5.length));
+    thisPoem = poem5[RanPoem5];
+    thisKpoem = kpoem5[RanPoem5];
+  }
+
+  text(title[thisTitle], width * 0.5, height * 0.775);
+  text(thiskTitle, width * 0.5, height * 0.815);
+  push();
+  textSize(28);
+  text(thisPoem, width * 0.5, height * 0.875);
+  text(thisKpoem, width * 0.5, height * 0.915)
+  pop();
+  pop();
+  buttonMaker();
+
+}
+
+function buttonMaker() {
+  if (buttonVar == 0) {
+    let button = createButton('Click Me!');
+    button.parent('button-holder');
+    button.position(width*0.85, height*0.4);
+    button.mousePressed(fortText2);
+    buttonVar = 1;
+  }
 }
