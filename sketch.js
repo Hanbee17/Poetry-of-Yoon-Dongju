@@ -359,7 +359,7 @@ function buttonMaker() {
   if (buttonVar == 0) {
     let button = createButton(' ');
     button.parent('button-holder');
-    button.position(windowWidth*0.25, windowHeight*0.20);
+    button.position(windowWidth*0.25, windowHeight*0.19);
     button.mousePressed(fortText2);
     buttonVar = 1;
   }

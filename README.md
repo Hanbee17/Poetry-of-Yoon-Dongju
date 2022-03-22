@@ -1,2 +1,4 @@
-# cho_node2
-For node 2 assignments
+# Poetry of Yoon Dongju
+By Hanbee Cho
+
+Poetry of Yoon Dongju is a randomization of dataset... 

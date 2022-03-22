@@ -7,17 +7,14 @@ canvas {
 }
 
 button {
-  cursor: pointer;
   border: none;
   background-color: transparent;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
   margin: auto;
-  color: none;
-  height: 46.5%;
-  width: 50%;
-  text-align: center;
+  height: 46.5vh;
+  width: 50vw;
+  /* position: relative; */
   text-decoration-color: transparent;
-  text-decoration: none;
   display: inline-block;
 }
 
