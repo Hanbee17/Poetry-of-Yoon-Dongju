@@ -150,6 +150,11 @@ let button;
 let buttonVar = 0;
 let coverVar = 0;
 
+let phase = 'coverPage';
+let FrontTextSize;
+let titleSize;
+let poemSize;
+
 function preload() {
   myFont = loadFont('font1.ttf');
   myImg0 = loadImage('img0.jpg');
@@ -162,22 +167,20 @@ function preload() {
   for (i = 0; i <= 2; i++) {
     myBgm[i] = loadSound('bgm'+[i]+'.mp3');
   }
-  //myBgm = loadSound('bgm.mp3');
 }
 
 function setup() {
-  let canvas = createCanvas(windowWidth*1,windowHeight*1);
+  let canvas = createCanvas(windowWidth*1,windowHeight*0.8);
   canvas.parent('myCanvas');
-
   RanBgm = int(random(myBgm.length));
   thisBgm = myBgm[RanBgm];
-
-
   background(0);
   frameRate(60);
   textFont(myFont);
   imageMode(CENTER);
+  textResize();
   intText();
+
   console.log(poem1[int(random(poem1.length))]);
   console.log(poem2.length);
   console.log(poem3.length);
@@ -190,7 +193,7 @@ function draw() {
   textSize(22);
   fill(173,181,189);
   textAlign(CENTER);
-  text('Click the button to see the poetry.', width * 0.5, height * 0.045);
+  text('Click the image to see the poetry.', width * 0.5, height * 0.045);
   text('Press Spacebar to play music and press Enter to pause the music.', width * 0.5, height * 0.075);
   pop();
 }
@@ -198,27 +201,17 @@ function draw() {
 function intText() {
   fill(173,181,189);
   imageMode(CENTER);
-  image(myImg0, width * 0.3, height * 0.5, width * 0.35, height * 0.7);
+  image(myImg0, width * 0.25, height * 0.5, width * 0.28, height * 0.75);
 
   push();
   fill(255);
   rectMode(CENTER);
   textAlign(LEFT);
-  textSize(25);
-  text(textEx, width * 0.7, height * 0.6, width * 0.4, height * 0.9)
-  text(textEx2, width * 0.7, height * 0.95, width * 0.4, height * 0.9)
+  textSize(FrontTextSize);
+  text(textEx, width * 0.68, height * 0.58, width * 0.53, height * 0.9)
+  text(textEx2, width * 0.68, height * 0.95, width * 0.53, height * 0.9)
   pop();
 }
-
-function mousePressed() {
-  if (coverVar == 0) {
-    fortText();
-    coverVar = 1;
-    console.log("test");
-  }
-}
-
-
 
 function keyPressed() {
   if (keyCode == 32) {
@@ -233,7 +226,6 @@ function Music() {
   RanBgm = int(random(myBgm.length));
   thisBgm = myBgm[RanBgm];
   thisBgm.play();
-  // thisBgm.loop();
 }
 }
 
@@ -241,48 +233,55 @@ function PauseMusic() {
   thisBgm.pause();
 }
 
-function fortText2() {
+function mousePressed() {
+  if (coverVar == 0) {
+    fortText();
+    coverVar = 1;
+    console.log("test");
+  }
+}
 
+function fortText2() {
   rectMode(CENTER);
   fill(254, 250, 224);
   rect(width*0.5, height*0.5, 1900,1300)
-
   push();
-  textSize(25);
+  textSize(titleSize);
   fill(33, 37, 41);
   textAlign(CENTER);
+  imageMode(CENTER);
 
   thisTitle = int(random(title.length));
   if (thisTitle == 0) {
-    image(myImg1, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    image(myImg1, width * 0.5, height * 0.425, width * 0.5, height * 0.6);
     thiskTitle = ktitle[0]
     RanPoem1 = int(random(poem1.length));
     thisPoem = poem1[RanPoem1];
     thisKpoem = kpoem1[RanPoem1];
 
   } else if (thisTitle == 1) {
-    image(myImg2, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    image(myImg2, width * 0.5, height * 0.425, width * 0.5, height * 0.6);
     thiskTitle = ktitle[1]
     RanPoem2 = int(random(poem2.length));
     thisPoem = poem2[RanPoem2];
     thisKpoem = kpoem2[RanPoem2];
 
   } else if (thisTitle == 2) {
-    image(myImg3, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    image(myImg3, width * 0.5, height * 0.425, width * 0.5, height * 0.6);
     thiskTitle = ktitle[2]
     RanPoem3 = int(random(poem3.length));
     thisPoem = poem3[RanPoem3];
     thisKpoem = kpoem3[RanPoem3];
 
   } else if (thisTitle == 3) {
-    image(myImg4, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    image(myImg4, width * 0.5, height * 0.425, width * 0.5, height * 0.6);
     thiskTitle = ktitle[3]
     RanPoem4 = int(random(poem4.length));
     thisPoem = poem4[RanPoem4];
     thisKpoem = kpoem4[RanPoem4];
 
   } else if (thisTitle == 4) {
-    image(myImg5, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    image(myImg5, width * 0.5, height * 0.425, width * 0.5, height * 0.6);
     thiskTitle = ktitle[4]
     RanPoem5 = int(random(poem5.length));
     thisPoem = poem5[RanPoem5];
@@ -292,7 +291,7 @@ function fortText2() {
   text(title[thisTitle], width * 0.5, height * 0.775);
   text(thiskTitle, width * 0.5, height * 0.815);
   push();
-  textSize(28);
+  textSize(poemSize);
   text(thisPoem, width * 0.5, height * 0.875);
   text(thisKpoem, width * 0.5, height * 0.915)
   pop();
@@ -301,46 +300,45 @@ function fortText2() {
 
 function fortText() {
 
+  phase = 'working';
   rectMode(CENTER);
   fill(254, 250, 224);
-  rect(width*0.5, height*0.5, 1900,1300)
+  rect(width*0.5, height*0.5, windowWidth*1.5,windowHeight*1.5)
 
-  push();
-  textSize(25);
+  textSize(titleSize);
   fill(33, 37, 41);
   textAlign(CENTER);
-
   thisTitle = int(random(title.length));
   if (thisTitle == 0) {
-    image(myImg1, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    image(myImg1, width * 0.5, height * 0.425, width * 0.5, height * 0.6);
     thiskTitle = ktitle[0]
     RanPoem1 = int(random(poem1.length));
     thisPoem = poem1[RanPoem1];
     thisKpoem = kpoem1[RanPoem1];
 
   } else if (thisTitle == 1) {
-    image(myImg2, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    image(myImg2, width * 0.5, height * 0.425, width * 0.5, height * 0.6);
     thiskTitle = ktitle[1]
     RanPoem2 = int(random(poem2.length));
     thisPoem = poem2[RanPoem2];
     thisKpoem = kpoem2[RanPoem2];
 
   } else if (thisTitle == 2) {
-    image(myImg3, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    image(myImg3, width * 0.5, height * 0.425, width * 0.5, height * 0.6);
     thiskTitle = ktitle[2]
     RanPoem3 = int(random(poem3.length));
     thisPoem = poem3[RanPoem3];
     thisKpoem = kpoem3[RanPoem3];
 
   } else if (thisTitle == 3) {
-    image(myImg4, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    image(myImg4, width * 0.5, height * 0.425, width * 0.5, height * 0.6);
     thiskTitle = ktitle[3]
     RanPoem4 = int(random(poem4.length));
     thisPoem = poem4[RanPoem4];
     thisKpoem = kpoem4[RanPoem4];
 
   } else if (thisTitle == 4) {
-    image(myImg5, width * 0.5, height * 0.425, width * 0.6, height * 0.6);
+    image(myImg5, width * 0.5, height * 0.425, width * 0.5, height * 0.6);
     thiskTitle = ktitle[4]
     RanPoem5 = int(random(poem5.length));
     thisPoem = poem5[RanPoem5];
@@ -350,21 +348,53 @@ function fortText() {
   text(title[thisTitle], width * 0.5, height * 0.775);
   text(thiskTitle, width * 0.5, height * 0.815);
   push();
-  textSize(28);
+  textSize(poemSize);
   text(thisPoem, width * 0.5, height * 0.875);
   text(thisKpoem, width * 0.5, height * 0.915)
   pop();
-  pop();
   buttonMaker();
-
 }
 
 function buttonMaker() {
   if (buttonVar == 0) {
-    let button = createButton('Click Me!');
+    let button = createButton(' ');
     button.parent('button-holder');
-    button.position(width*0.85, height*0.4);
+    button.position(windowWidth*0.25, windowHeight*0.20);
     button.mousePressed(fortText2);
     buttonVar = 1;
   }
+}
+
+function textResize() {
+  if (windowWidth > 1500) {
+    FrontTextSize = 28;
+    titleSize = 25;
+    poemSize = 28;
+
+  } else if (windowWidth > 1200) {
+    FrontTextSize = 25;
+    titleSize = 23;
+    poemSize = 26;
+
+  } else if (windowWidth > 900) {
+    FrontTextSize = 20;
+    titleSize = 17;
+    poemSize = 20;
+
+  } else if (windowWidth > 600) {
+    FrontTextSize = 14;
+    titleSize = 11;
+    poemSize = 14;
+  }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth*1, windowWidth*0.8);
+  if (phase == 'coverPage') {
+    intText();
+  } else if (phase == 'wokring'); {
+    fortText();
+    fortText2();
+  }
+  textResize();
 }

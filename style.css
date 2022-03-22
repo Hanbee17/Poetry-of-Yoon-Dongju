@@ -7,17 +7,18 @@ canvas {
 }
 
 button {
-  font-family: 'font1';
-  font-size: large;
-  margin: auto;
-  background-color: none;
+  cursor: pointer;
   border: none;
+  background-color: transparent;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  margin: auto;
   color: none;
-  padding: 30px 64px;
+  height: 46.5%;
+  width: 50%;
   text-align: center;
+  text-decoration-color: transparent;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
 }
 
 h1 {
@@ -26,4 +27,5 @@ h1 {
 
 p {
   text-align: center;
+  padding: 0px;
 }
