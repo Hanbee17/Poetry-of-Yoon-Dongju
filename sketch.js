@@ -244,7 +244,7 @@ function mousePressed() {
 function fortText2() {
   rectMode(CENTER);
   fill(254, 250, 224);
-  rect(width*0.5, height*0.5, 1900,1300)
+  rect(width*0.5, height*0.5, windowWidth*1.5,windowHeight*1.5)
   push();
   textSize(titleSize);
   fill(33, 37, 41);
