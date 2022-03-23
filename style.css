@@ -11,11 +11,12 @@ button {
   background-color: transparent;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
   margin: auto;
-  height: 46.5vh;
+  height: 48vh;
   width: 50vw;
-  /* position: relative; */
+  position: relative;
   text-decoration-color: transparent;
   display: inline-block;
+  /* transform: translate(-45%, 0%); */
 }
 
 h1 {

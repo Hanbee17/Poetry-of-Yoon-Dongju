@@ -244,7 +244,7 @@ function mousePressed() {
 function fortText2() {
   rectMode(CENTER);
   fill(254, 250, 224);
-  rect(width*0.5, height*0.5, windowWidth*1.5,windowHeight*1.5)
+  rect(width*0.5, height*0.5, windowWidth*2,windowHeight*2)
   push();
   textSize(titleSize);
   fill(33, 37, 41);
@@ -303,7 +303,7 @@ function fortText() {
   phase = 'working';
   rectMode(CENTER);
   fill(254, 250, 224);
-  rect(width*0.5, height*0.5, windowWidth*1.5,windowHeight*1.5)
+  rect(width*0.5, height*0.5, windowWidth*2,windowHeight*2)
 
   textSize(titleSize);
   fill(33, 37, 41);
@@ -358,8 +358,10 @@ function fortText() {
 function buttonMaker() {
   if (buttonVar == 0) {
     let button = createButton(' ');
-    button.parent('button-holder');
+    button.parent('myCanvas');
+    button.center();
     button.position(windowWidth*0.25, windowHeight*0.19);
+    // button.size(width*0.5,height*0.6);
     button.mousePressed(fortText2);
     buttonVar = 1;
   }
@@ -393,6 +395,7 @@ function windowResized() {
   if (phase == 'coverPage') {
     intText();
   } else if (phase == 'wokring'); {
+    buttonMaker();
     fortText();
     fortText2();
   }
