@@ -385,9 +385,10 @@ function buttonMaker() {
   if (buttonVar == 0) {
     let button = createButton(' ');
     button.parent('myCanvas');
-    button.center();
+    // button.center();
     button.position(windowWidth*0.25, windowHeight*0.19);
     // button.size(width*0.5,height*0.6);
+    button.attribute('position', windowWidth*0.25, windowHeight*0.19);
     button.mousePressed(fortText2);
     buttonVar = 1;
   }
@@ -425,5 +426,6 @@ function windowResized() {
     fortText();
     fortText2();
   }
+  button.position(windowWidth*0.25, windowHeight*0.19);
   textResize();
 }
