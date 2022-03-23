@@ -122,7 +122,7 @@ let kpoem5 = ['쫓아오던 햇빛인데, 지금 교회당 꼭대기 십자가�
 
 
 let textEx = 'Yoon Dongju (1917-1945), the poet most loved by the Korean people, uprightly sought the direction of the times and life through literature, even in difficult times of the colonial rule by Japan. He consistently wrote poems in Korean that pondered and reflected on the reality the community faced, and this led to his imprisonment on charges of independence movement and death at the age of 27. However, the poems that put him in danger have since resonated and breathed in the hearts of many.'
-let textEx2 = 'The 124 poems and prose works that he left behind have become the poems most loved by Koreans, remembered by East Asians, and sympathized with by people around the world. Through poems such as "Prelude", "The Cross", and "Counting the Stars", he showed that a clear and pure soul lives on earth. He pledged to ‘walk the path given to him’ with a heart of ‘love for all dying things.’ The poems of Yoon Dongju, who constantly reflected on himself and sought to walk by his faith, have since become the driving force in each era and for the youth.'
+let textEx2 = 'The 124 poems and prose works that he left behind have become the poems most loved by Koreans, and sympathized with by people around the world. Through poems such as "Prelude", "The Cross", and "Counting the Stars", he showed that a clear and pure soul lives on earth. He pledged to ‘walk the path given to him’ with a heart of ‘love for all dying things.’ The poems of Yoon Dongju, who constantly reflected on himself and sought to walk by his faith, have since become the driving force in each era and for the youth.'
 
 let thisTitle;
 let thiskTitle;
@@ -164,7 +164,7 @@ function preload() {
   myImg4 = loadImage('img4.jpg');
   myImg5 = loadImage('img5.jpg');
 
-  for (i = 0; i <= 2; i++) {
+  for (i = 0; i <= 5; i++) {
     myBgm[i] = loadSound('bgm'+[i]+'.mp3');
   }
 }
@@ -189,27 +189,31 @@ function setup() {
 }
 
 function draw() {
+}
+
+function intText() {
+
   push();
+  textFont('serif');
   textSize(22);
   fill(173,181,189);
   textAlign(CENTER);
   text('Click the image to see the poetry.', width * 0.5, height * 0.045);
   text('Press Spacebar to play music and press Enter to pause the music.', width * 0.5, height * 0.075);
   pop();
-}
 
-function intText() {
-  fill(173,181,189);
+  fill(206,212,218);
   imageMode(CENTER);
   image(myImg0, width * 0.25, height * 0.5, width * 0.28, height * 0.75);
 
   push();
-  fill(255);
+  textFont('serif');
+  fill(173,181,189);
   rectMode(CENTER);
   textAlign(LEFT);
   textSize(FrontTextSize);
-  text(textEx, width * 0.68, height * 0.58, width * 0.53, height * 0.9)
-  text(textEx2, width * 0.68, height * 0.95, width * 0.53, height * 0.9)
+  text(textEx, width * 0.66, height * 0.58, width * 0.47, height * 0.9)
+  text(textEx2, width * 0.66, height * 0.95, width * 0.47, height * 0.9)
   pop();
 }
 
@@ -242,6 +246,8 @@ function mousePressed() {
 }
 
 function fortText2() {
+
+  phase = 'working';
   rectMode(CENTER);
   fill(254, 250, 224);
   rect(width*0.5, height*0.5, windowWidth*2,windowHeight*2)
@@ -250,6 +256,15 @@ function fortText2() {
   fill(33, 37, 41);
   textAlign(CENTER);
   imageMode(CENTER);
+
+  push();
+  textFont(myFont);
+  textSize(22);
+  fill(173,181,189);
+  textAlign(CENTER);
+  text('Click the image to see the poetry.', width * 0.5, height * 0.045);
+  text('Press Spacebar to play music and press Enter to pause the music.', width * 0.5, height * 0.075);
+  pop();
 
   thisTitle = int(random(title.length));
   if (thisTitle == 0) {
@@ -304,6 +319,15 @@ function fortText() {
   rectMode(CENTER);
   fill(254, 250, 224);
   rect(width*0.5, height*0.5, windowWidth*2,windowHeight*2)
+
+  push();
+  textFont(myFont);
+  textSize(22);
+  fill(173,181,189);
+  textAlign(CENTER);
+  text('Click the image to see the poetry.', width * 0.5, height * 0.045);
+  text('Press Spacebar to play music and press Enter to pause the music.', width * 0.5, height * 0.075);
+  pop();
 
   textSize(titleSize);
   fill(33, 37, 41);
@@ -369,7 +393,7 @@ function buttonMaker() {
 
 function textResize() {
   if (windowWidth > 1500) {
-    FrontTextSize = 28;
+    FrontTextSize = 25;
     titleSize = 25;
     poemSize = 28;
 
