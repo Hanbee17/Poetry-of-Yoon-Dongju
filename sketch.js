@@ -163,13 +163,21 @@ function preload() {
   myImg3 = loadImage('img3.jpg');
   myImg4 = loadImage('img4.jpg');
   myImg5 = loadImage('img5.jpg');
-
   for (i = 0; i <= 6; i++) {
     myBgm[i] = loadSound('bgm'+[i]+'.mp3');
   }
 }
 
 function setup() {
+  resetPage ();
+  console.log(poem1[int(random(poem1.length))]);
+  console.log(poem2.length);
+  console.log(poem3.length);
+  console.log(keyPressed);
+  console.log(myBgm.length);
+}
+
+function resetPage() {
   let canvas = createCanvas(windowWidth*1,windowHeight*0.8);
   canvas.parent('myCanvas');
   RanBgm = int(random(myBgm.length));
@@ -180,15 +188,6 @@ function setup() {
   imageMode(CENTER);
   textResize();
   intText();
-
-  console.log(poem1[int(random(poem1.length))]);
-  console.log(poem2.length);
-  console.log(poem3.length);
-  console.log(keyPressed);
-  console.log(myBgm.length);
-}
-
-function draw() {
 }
 
 function intText() {
@@ -222,8 +221,11 @@ function keyPressed() {
    Music();
   } else if (keyCode === 13) {
     PauseMusic();
-  }
+  } //else if (keyCode === 27) {
+  //   resetPage();
+  // }
 }
+
 
 function Music() {
   if (thisBgm.isPlaying() == false) {
@@ -263,7 +265,7 @@ function fortText2() {
   fill(173,181,189);
   textAlign(CENTER);
   text('Click the image to see the poetry.', width * 0.5, height * 0.045);
-  text('Press Spacebar to play music and press Enter to pause the music.', width * 0.5, height * 0.075);
+  text('Press Spacebar to play music and press Enter to pause the music. Repeat the step to play different songs.', width * 0.5, height * 0.075);
   pop();
 
   thisTitle = int(random(title.length));
@@ -398,12 +400,12 @@ function textResize() {
     poemSize = 28;
 
   } else if (windowWidth > 1200) {
-    FrontTextSize = 25;
+    FrontTextSize = 20;
     titleSize = 23;
     poemSize = 26;
 
   } else if (windowWidth > 900) {
-    FrontTextSize = 20;
+    FrontTextSize = 18;
     titleSize = 17;
     poemSize = 20;
 
