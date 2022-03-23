@@ -164,7 +164,7 @@ function preload() {
   myImg4 = loadImage('img4.jpg');
   myImg5 = loadImage('img5.jpg');
 
-  for (i = 0; i <= 5; i++) {
+  for (i = 0; i <= 6; i++) {
     myBgm[i] = loadSound('bgm'+[i]+'.mp3');
   }
 }
