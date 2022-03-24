@@ -3,16 +3,17 @@
 
 Poetry of Yoon Dongju project is a curated data project that displays various random elements with different user interactions.
 This project was curated with the poetries of a historic poet from Korea, Yoon Dongju.
+The reason why I randomized his poetry is because I wanted to share his works and let many people know about Yoon Dongju.
 
-He is a historic figure that means a lot to Koreans and he is one of the most taught poets during literature class.
+# Context
 
-The reason why he is so important is that he consistently wrote poems in Korean that pondered and reflected on the reality of the Japanese invasion.
+He is a historic figure that means a lot to Koreans and he is one of the most taught poets during literature class. The reason why he is so important is that he consistently wrote poems in Korean that pondered and reflected on the reality of the Japanese invasion.
 
-During Japanese colonial, Koreans were ruled by the national annihilation policy, a policy pursued with the aim of making Koreans even Japanese in the minds of Koreans by annihilating our culture and ethnicity. In order to make this works, Japan firstly banned the use of Hangeul(Korean alphabet) and Korean.
+During Japanese colonial, Koreans were ruled by the national annihilation policy, a policy pursued with the aim of making Koreans even Japanese in the minds of Koreans by annihilating our culture and ethnicity. In order to force this effectively, Japan firstly banned the use of Hangeul(Korean alphabet) and Korean.
 
-Yoon Dongju was born into a wealthy elite family. His parents wanted him to become a doctor, but Yoon Dongju, who has loved to write since childhood, decided to pursue a literary career. However, during the Japanese colonial period, in order to receive a higher education, they had to go to Japan and study abroad. In order to do that he had to change his name into a Japanese name. He changed his name for the sake of his dream, but he was always ashamed of that fact and revealed it through poetry.
+Yoon Dongju was born into a wealthy elite family. His parents wanted him to become a doctor, but Yoon Dongju, who has loved to write since childhood, decided to pursue a literary career. However, during the Japanese colonial period, in order to receive a higher education, he had to go to Japan and study abroad. In order to do that, he had to change his name into a Japanese name. He changed his name for the sake of his dream, but he was always ashamed of that fact and revealed it through poetry.
 
-In 'Confession' written just before he changed his name, his desperate shame and humiliation are described in the poem. He finally got a chance to study in Japan, but his studies were not going well. But perhaps because of his innate talent, poetry was written very easily and well. ‘A Poems Written Easily' reveals his feelings of shame and guilt about his identity as a poet, about why his hometown friends and Koreans are imprisoned and dying during the independence movement, but his poems are written so easily.
+In 'Confession' written just before he changed his name, his desperate shame and humiliation are described in the poem. He finally began to study in Japan, but his studies were not going well. But perhaps because of his innate talent, poetry was written very easily and well. ‘A Poems Written Easily' reveals his feelings of shame and guilt about his identity as a poet, about why his hometown friends and Koreans are imprisoned and dying from participating the independence movement, but his poems are written so easily.
 
 Poet Yoon Dongju, who was constantly repenting and ashamed, was imprisoned for conspiracy to fight for the independence of Korea and died in February 1945 at the young age of 27. The exact cause of his death is not known, but according to his cousin, who was imprisoned along with him, there is a suspicion that he died while undergoing a biological experiment because he continued to receive unknown injections. Yoon Dongju died six months before the independence of Korea, without even seeing his poetry book published.
 
