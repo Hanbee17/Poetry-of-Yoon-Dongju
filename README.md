@@ -38,8 +38,16 @@ Although he did not fight for independence with guns and bombs, he is remembered
 - Second mouse interaction with clicking the image will let user to get a random poem lines
 - Keyboard interaction that plays/pauses(space bar/enter) background music
 
+# Resources on Yoon Dongju
+- Life And Poetry Of The Eternal Young Poet, Yoon Dongju : https://artsandculture.google.com/story/life-and-poetry-of-the-eternal-young-poet-yoon-dongju-yoon-dongju-memorial-hall/ZQVxOv5SmmRsAw?hl=en
+- Dive into a poetically tragic history of Korea with Yoon Dong Ju’s poems : https://kpophighindia.com/dive-into-a-poetically-tragic-history-of-korea-with-yoon-dong-jus-poems/
+- Mysteries on Late Poet Yoon Dong-joo Still Linger : https://www.koreatimes.co.kr/www/news/nation/2009/02/117_38836.html
+- Dongju: The Portrait of a Poet(movie) : https://www.imdb.com/title/tt5799928/
 
-# Resources
-Poems were translated by Suh Hong Won and Seon-Gyeom Choi, 2011 by YONSEI UNIVERSITY PRESS.
-Images are from Yoon Dongju Memorial Hall, Yonsei University.
-Musics are from Keys of Moon music, https://soundcloud.com/keysofmoon.
+# Sources
+- Original poems by Yoon Dongju.
+- Poems were translated by Suh Hong Won and Seon-Gyeom Choi, 2011 by YONSEI UNIVERSITY PRESS.
+- Images are from Yoon Dongju Memorial Hall, Yonsei University.
+- Musics are from Keys of Moon music, https://soundcloud.com/keysofmoon.
+
+
