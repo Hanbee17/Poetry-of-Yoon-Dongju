@@ -5,7 +5,7 @@ Poetry of Yoon Dongju project is a curated data project that displays various ra
 This project was curated with the poetries of a historic poet from Korea, Yoon Dongju.
 The reason why I randomized his poetry is because I wanted to share his works and let many people know about Yoon Dongju.
 
-# Context
+# Context on Yoon Dongju
 
 He is a historic figure that means a lot to Koreans and he is one of the most taught poets during literature class. The reason why he is so important is that he consistently wrote poems in Korean that pondered and reflected on the reality of the Japanese invasion.
 
