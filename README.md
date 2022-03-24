@@ -19,12 +19,12 @@ Poet Yoon Dongju, who was constantly repenting and ashamed, was imprisoned for c
 Although he did not fight for independence with guns and bombs, he is remembered by many Koreans as a young man who lived in endless shame during his short life and as a poet of resistance who tried to keep Hangeul poetry until the end.
 
 
-###Cover Page
+### Cover Page
 - Has a portrait of Yoon Dongju
 - Short description of available user interactions
 - Little context about Yoon Dongju and why his poetry means a lot to most of Korean people
 
-#Main Page
+# Main Page
 - Short description of available user interactions
 - 5 images of the original 5 poems written in hand writing by the poet
 - The English translated titles along with the Korean titles
@@ -32,7 +32,7 @@ Although he did not fight for independence with guns and bombs, he is remembered
 - A random poem line will present matching image, English translated title, Korean title, and English translated poem line.
 - Randomized background music from 6 songs
 
-#User Interaction Features
+# User Interaction Features
 - Mouse interaction that changes cover page to main page
 - Second mouse interaction with clicking the image will let user to get a random poem lines
 - Keyboard interaction that plays/pauses(space bar/enter) background music
