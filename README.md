@@ -19,7 +19,7 @@ Poet Yoon Dongju, who was constantly repenting and ashamed, was imprisoned for c
 Although he did not fight for independence with guns and bombs, he is remembered by many Koreans as a young man who lived in endless shame during his short life and as a poet of resistance who tried to keep Hangeul poetry until the end.
 
 
-### Cover Page
+# Cover Page
 - Has a portrait of Yoon Dongju
 - Short description of available user interactions
 - Little context about Yoon Dongju and why his poetry means a lot to most of Korean people
