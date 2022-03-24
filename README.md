@@ -1,9 +1,10 @@
 # Poetry of Yoon Dongju
 ### By Hanbee Cho
 
-Poetry of Yoon Dongju project is a curated data project that displays various random elements with different user interactions.
-This project was curated with the poetries of a historic poet from Korea, Yoon Dongju.
-The reason why I randomized his poetry is because I wanted to share his works and let many people know about Yoon Dongju.
+_Poetry of Yoon Dongju_ project is a curated data project that displays various random elements with different user interactions.
+This project was curated with the poetries of a historic poet from Korea, Yoon Dongju. The reason why I randomized his poetry is because I wanted to share his works and let many people know about Yoon Dongju.
+By working on this project, I was able to collaboratively work on javascript, HTML, and CSS to fully visualize and program the randomizer. The challenge of this project was to match the randomized poem lines with its image, English translated title, Korean title, and English translated poem line. Moreover, to fully engage with a user, I decided to put 6 melancholic songs that match the mood of the poetry. On the original images, a user can see the poet’s handwriting, and the font choice of the randomized poem lines was based on the decision to bring up a sense of hand-written features despite its poor readability on the main page.
+
 
 # Context on Yoon Dongju
 
@@ -37,6 +38,7 @@ Although he did not fight for independence with guns and bombs, he is remembered
 - Mouse interaction that changes cover page to main page
 - Second mouse interaction with clicking the image will let user to get a random poem lines
 - Keyboard interaction that plays/pauses(space bar/enter) background music
+- Window rezising is available
 
 # Resources on Yoon Dongju
 - Life And Poetry Of The Eternal Young Poet, Yoon Dongju : https://artsandculture.google.com/story/life-and-poetry-of-the-eternal-young-poet-yoon-dongju-yoon-dongju-memorial-hall/ZQVxOv5SmmRsAw?hl=en
@@ -44,7 +46,7 @@ Although he did not fight for independence with guns and bombs, he is remembered
 - Mysteries on Late Poet Yoon Dong-joo Still Linger : https://www.koreatimes.co.kr/www/news/nation/2009/02/117_38836.html
 - Dongju: The Portrait of a Poet(movie) : https://www.imdb.com/title/tt5799928/
 
-# Sources
+# Credits
 - Original poems by Yoon Dongju.
 - Poems were translated by Suh Hong Won and Seon-Gyeom Choi, 2011 by YONSEI UNIVERSITY PRESS.
 - Images are from Yoon Dongju Memorial Hall, Yonsei University.
